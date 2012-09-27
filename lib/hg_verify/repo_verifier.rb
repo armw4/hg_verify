@@ -9,7 +9,7 @@ module HgVerify
       pull_latest if @options[:pull_latest]
       ensure_latest if @options[:ensure_latest]
       info "Verifying a total of #{repos.length} repositories."
-      repos.each { |url| verify_repo(url) }
+      verify_all_repos
       log_unmerged_repos if unmerged_repos.any?
       general "All repos have been merged." unless unmerged_repos.any?
     end
@@ -76,6 +76,10 @@ module HgVerify
 
       error "Your repo configuration is invalid. Please type hg_verify -h to see a sample configuration" unless config[:repositories]
       config[:repositories]
+    end
+
+    def verify_all_repos
+      repos.each { |url| verify_repo(url) }
     end
 
     def verify_repo(url)

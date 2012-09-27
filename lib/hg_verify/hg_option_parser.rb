@@ -20,10 +20,10 @@ module HgVerify
 
           opts.on("-s", "--silver-repos-config-path FILE.yml", "The location of the silver repos to be verified; specified in YAML format.",
                     ":repositories:",
-                      "  - https://vcs.nreca.org/Core12/Siverl1",
-                      "  - https://vcs.nreca.org/Core12/Siverl2",
-                      "  - https://vcs.nreca.org/Core12/Siverl3",
-                      "  - https://vcs.nreca.org/Core12/Siverl4",) do |repo_path|
+                      "  - https://vcs.domain.com/Core12/DevRepo1",
+                      "  - https://vcs.domain.com/Core12/DevRepo2",
+                      "  - https://vcs.domain.com/Core12/DevRepo3",
+                      "  - https://vcs.domain.com/Core12/DevRepo4",) do |repo_path|
                         options[:repo_config_path] = repo_path
           end
 

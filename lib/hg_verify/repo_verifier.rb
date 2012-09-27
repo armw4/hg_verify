@@ -104,8 +104,8 @@ module HgVerify
       general "The following #{unmerged_repo_count}#{repository} #{has} not been fully merged."
 
       unmerged_repos.each do |repo_stat|
-        general "Repository url: #{repo_stat[:url]}."
-        general "Unmerged changes: #{repo_stat[:unmerged_changes]}."
+        general "Repository url: #{repo_stat[:url]}"
+        general "Unmerged changes: #{repo_stat[:unmerged_changes]}"
       end
     end
   end

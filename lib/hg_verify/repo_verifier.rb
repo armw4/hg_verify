@@ -99,7 +99,7 @@ module HgVerify
       end
 
       unmerged_repo_count = unmerged_repos.length == 1 ? "" : unmerged_repos.length.to_s + " "
-      general "The following  #{unmerged_repo_count}#{repository} #{has} not been fully merged."
+      general "The following #{unmerged_repo_count}#{repository} #{has} not been fully merged."
 
       unmerged_repos.each do |repo_stat|
         general "Repository url: #{repo_stat[:url]} Unmerged changes: #{repo_stat[:unmerged_changes]}.\n"

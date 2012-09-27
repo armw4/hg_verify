@@ -33,9 +33,7 @@ module HgVerify
     def validate_options
       required_options = [:integration_repo_url, :repo_config_path]
 
-      required_options.each do |option|
-        error "#{option} is required." unless @options[option]
-      end
+      required_options.each { |option| error "#{option} is required." unless @options[option] }
 
       error "Could not find repo config file at #{@options[:repo_config_path]}." unless File.exists?(File.expand_path(@options[:repo_config_path]))
       error "It is redundant to ensure latest if you are already pulling latest. Please specify one option or the other." if @options[:pull_latest] && @options[:ensure_latest]

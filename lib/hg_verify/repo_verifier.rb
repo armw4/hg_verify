@@ -86,7 +86,7 @@ module HgVerify
         info "All changes from #{url} have been merged into #{@options[:integration_repo_url]}."
       else
         info "Unmerged repository detected."
-        unmerged_changes_count = output.scan(/changeset.+\n?/m).length
+        unmerged_changes_count = output.scan(/changeset/).length
         unmerged_repos << { url: url, unmerged_changes: unmerged_changes_count }
       end
     end
